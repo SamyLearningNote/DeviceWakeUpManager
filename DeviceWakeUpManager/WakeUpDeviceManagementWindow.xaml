@@ -141,7 +141,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" x:Name="VersionTextBlock" Text="Version: 1.0.0.0"/>
                 <TextBlock Grid.Column="1" x:Name="CheckForUpdateTextBlock">
-                    <Hyperlink NavigateUri="#" RequestNavigate="Hyperlink_RequestNavigate">
+                    <Hyperlink NavigateUri="https://github.com/SamyLearningNote/DeviceWakeUpManager/releases" RequestNavigate="Hyperlink_RequestNavigate">
                         Check for update
                     </Hyperlink>
                 </TextBlock>

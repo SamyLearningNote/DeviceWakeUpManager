@@ -58,14 +58,12 @@ namespace DeviceWakeUpManager
         commandFunctions cmd = new commandFunctions();
         public backgroungWorker()
         {
-            System.Windows.Forms.MessageBox.Show("001");
             this.Width = 0;
             this.Height = 0;
             this.WindowStyle = WindowStyle.None;
             this.ShowInTaskbar = false;
             this.ShowActivated = false;
-            //InitializeComponent()
-            System.Windows.Forms.MessageBox.Show("002"); ;
+            //InitializeComponent();
 
             // init context menu
             System.Windows.Forms.MenuItem mwMenuItem = new System.Windows.Forms.MenuItem();
@@ -76,7 +74,6 @@ namespace DeviceWakeUpManager
             eMenuItem.Text = "Exit";
             cm.MenuItems.Add(eMenuItem);
             eMenuItem.Click += eMenuItem_Click;
-            System.Windows.Forms.MessageBox.Show("003");
 
             // init the notify icon
             //ComponentResourceManager resources = new ComponentResourceManager(typeof(backgroungWorker));
@@ -84,19 +81,16 @@ namespace DeviceWakeUpManager
             nIcon.Visible = true;
             nIcon.ContextMenu = cm;
 
-            System.Windows.Forms.MessageBox.Show("004");
             // load the configuration
             commonSet.LoadConfiguration();
             CheckNeedToShowWindow();
 
-            System.Windows.Forms.MessageBox.Show("005");
             // register auto start
             AutoRunRegister();
 
             // use the auto disable function
             AutoDisable();
 
-            System.Windows.Forms.MessageBox.Show("006");
         }
 
         public void AutoDisable()
