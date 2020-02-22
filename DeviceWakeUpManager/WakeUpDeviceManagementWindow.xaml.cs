@@ -39,6 +39,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Windows.Navigation;
 
 namespace DeviceWakeUpManager
 {
@@ -449,9 +451,12 @@ namespace DeviceWakeUpManager
 
         }
 
+        // Reference:
+        // https://stackoverflow.com/questions/10238694/example-using-hyperlink-in-wpf
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            MessageBox.Show("Link clicked");
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
 
         private void AutoStartCheckBox_Checked(object sender, RoutedEventArgs e)
